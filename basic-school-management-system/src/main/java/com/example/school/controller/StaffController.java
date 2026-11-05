@@ -13,9 +13,15 @@ import com.example.school.service.StaffService;
 
 @RestController
 public class StaffController {
-
+	
+	private StaffService ss;
+	
 	@Autowired
-	StaffService ss;
+	public void setStaffService(StaffService staffServiceImpl)
+	{
+		this.ss=staffServiceImpl;
+	}
+
 
 	@PostMapping("staff")
 	String addStaff(@RequestBody Staff s) {
