@@ -14,8 +14,13 @@ import com.example.school.service.TeacherService;
 @RestController
 public class TeacherController {
 
+	private TeacherService ts;
+
 	@Autowired
-	TeacherService ts;
+	public void setTeacherService(TeacherService teacherServiceImpl) {
+
+		this.ts = teacherServiceImpl;
+	}
 
 	@PostMapping("teacher")
 	String addTeacher(@RequestBody Teacher t) {
